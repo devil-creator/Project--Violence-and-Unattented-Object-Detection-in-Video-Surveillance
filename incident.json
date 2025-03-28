@@ -1,0 +1,16 @@
+[
+    {
+      "image": "C:/ThreatDetection/violence_frames/incident_20240615_143022.jpg",
+      "time": "2024-06-15 14:30:22",
+      "type": "Violence Detected",
+      "confidence": 0.65,
+      "bounding_box": [125, 80, 320, 280]
+    },
+    {
+      "image": "C:/ThreatDetection/violence_frames/incident_20240615_143512.jpg",
+      "time": "2024-06-15 14:35:12",
+      "type": "Violence Detected",
+      "confidence": 0.71,
+      "bounding_box": [80, 60, 280, 260]
+    }
+  ]

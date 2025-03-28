@@ -1,0 +1,52 @@
+[
+    {
+        "image_path": "violence_frames\\violence_20250326_161757_49.jpg",
+        "timestamp": "2025-03-26 16:17:57",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_161757_48.jpg",
+        "timestamp": "2025-03-26 16:17:57",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_161756_47.jpg",
+        "timestamp": "2025-03-26 16:17:56",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_161408_99.jpg",
+        "timestamp": "2025-03-26 16:14:08",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_161401_82.jpg",
+        "timestamp": "2025-03-26 16:14:01",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_145607_99.jpg",
+        "timestamp": "2025-03-26 14:56:07",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_145600_82.jpg",
+        "timestamp": "2025-03-26 14:56:00",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_125354_99.jpg",
+        "timestamp": "2025-03-26 12:53:54",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "violence_frames\\violence_20250326_125347_82.jpg",
+        "timestamp": "2025-03-26 12:53:47",
+        "threat_type": "VIOLENCE"
+    },
+    {
+        "image_path": "abandoned_objects\\abandoned_bottle_4.0_1742973551.jpg",
+        "timestamp": "2025-03-26 12:49:11",
+        "threat_type": "ABANDONED OBJECT"
+    }
+]

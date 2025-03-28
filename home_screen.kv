@@ -1,0 +1,59 @@
+<HomeScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 6/255, 20/255, 27/255, 1  # Dark blue background (#06141B)
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Real-Time Threat Detection"
+            font_size: '24sp'
+            bold: True
+            color: 204/255, 208/255, 207/255, 1  # Light gray text (#CCD0CF)
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: "Live Threat Detection"
+            font_size: '18sp'
+            background_normal: ''
+            background_color: 37/255, 55/255, 69/255, 1  # Dark blue button (#253745)
+            color: 155/255, 168/255, 171/255, 1  # Light gray text (#9BA8AB)
+            size_hint_y: None
+            height: 50
+            on_press: app.view_live_detections()
+
+        Button:
+            text: "Live Abandoned Object Detection"
+            font_size: '18sp'
+            background_normal: ''
+            background_color: 37/255, 55/255, 69/255, 1  # Dark blue button (#253745)
+            color: 155/255, 168/255, 171/255, 1  # Light gray text (#9BA8AB)
+            size_hint_y: None
+            height: 50
+            on_press: app.start_abandoned_detection()
+
+        Button:
+            text: "Incident Logs"
+            font_size: '18sp'
+            background_normal: ''
+            background_color: 37/255, 55/255, 69/255, 1  # Dark blue button (#253745)
+            color: 155/255, 168/255, 171/255, 1  # Light gray text (#9BA8AB)
+            size_hint_y: None
+            height: 50
+            on_press: app.show_logs()
+
+        Button:
+            text: "Logout"
+            font_size: '18sp'
+            background_normal: ''
+            background_color: 100/255, 0/255, 0/255, 1  # Dark red color for logout button
+            color: 1, 1, 1, 1  # White text
+            size_hint_y: None
+            height: 50
+            on_press: app.stop()  # This will stop the application

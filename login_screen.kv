@@ -1,0 +1,192 @@
+<CustomTextInput@TextInput>:
+    size_hint_y: None
+    height: 55
+    multiline: False
+    padding: [20, (self.height - self.line_height)/2]
+    background_color: 0, 0, 0, 0
+    foreground_color: 1, 1, 1, 1  # White text when typing
+    hint_text_color: 0.85, 0.85, 0.85, 0.9  # Visible hint text
+    font_size: '18sp'
+    cursor_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: 0.15, 0.15, 0.15, 0.8
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [12,]
+        Color:
+            rgba: (0.4, 0.7, 1, 1) if self.focus else (0.4, 0.4, 0.4, 1)
+        Line:
+            width: 1.5 if self.focus else 1.2
+            rounded_rectangle: (self.x, self.y, self.width, self.height, 12)
+
+<HoverButton@Button>:
+    size_hint_y: None
+    height: 55
+    background_normal: ''
+    background_color: 0, 0, 0, 0
+    color: 1, 1, 1, 1
+    font_size: '18sp'
+    bold: True
+    canvas.before:
+        Color:
+            rgba: (0.2, 0.6, 1, 1) if self.state == 'down' else (0.1, 0.5, 0.9, 1)
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [12,]
+    canvas.after:
+        Color:
+            rgba: 1, 1, 1, 0.3
+        Line:
+            width: 1.5
+            rounded_rectangle: (self.x, self.y, self.width, self.height, 12)
+
+<LoginScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.15, 0.2, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+            Color:
+                rgba: 0, 0.4, 0.8, 0.4
+            Ellipse:
+                pos: -0.2*self.width, 0.7*self.height
+                size: self.width*1.4, self.width*1.4
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.85, 0.8
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            spacing: 25
+            padding: [30, 40, 30, 40]
+
+            Label:
+                text: ' Login Here'
+                font_size: '30sp'
+                bold: True
+                color: 0.9, 0.95, 1, 1
+                size_hint_y: None
+                height: 70
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 20
+                size_hint_y: None
+                height: self.minimum_height
+
+                CustomTextInput:
+                    id: username
+                    hint_text: 'Enter Username'
+
+                CustomTextInput:
+                    id: password
+                    hint_text: 'Enter Password'
+                    password: True
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 15
+                size_hint_y: None
+                height: self.minimum_height
+
+                HoverButton:
+                    text: 'LOGIN'
+                    on_press: root.attempt_login()
+
+                Label:
+                    text: ' OR '
+                    color: 0.7, 0.8, 1, 0.7
+                    size_hint_y: None
+                    height: 40
+                    font_size: '16sp'
+
+                HoverButton:
+                    text: 'CREATE ACCOUNT'
+                    on_press: root.show_signup()
+
+            Label:
+                id: status
+                text: ''
+                color: 1, 0.4, 0.4, 1
+                size_hint_y: None
+                height: 40
+                font_size: '16sp'
+                bold: True
+
+<SignupScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.15, 0.2, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+            Color:
+                rgba: 0, 0.4, 0.8, 0.4
+            Ellipse:
+                pos: 0.7*self.width, 0.8*self.height
+                size: self.width*1.2, self.width*1.2
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 0.85, 0.9
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            spacing: 20
+            padding: [30, 40, 30, 40]
+
+            Label:
+                text: 'CREATE ACCOUNT'
+                font_size: '30sp'
+                bold: True
+                color: 0.9, 0.95, 1, 1
+                size_hint_y: None
+                height: 70
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 20
+                size_hint_y: None
+                height: self.minimum_height
+
+                CustomTextInput:
+                    id: new_username
+                    hint_text: 'Choose Username'
+
+                CustomTextInput:
+                    id: new_password
+                    hint_text: 'Choose Password'
+                    password: True
+
+                CustomTextInput:
+                    id: confirm_password
+                    hint_text: 'Confirm Password'
+                    password: True
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 15
+                size_hint_y: None
+                height: self.minimum_height
+
+                HoverButton:
+                    text: 'SIGN UP'
+                    on_press: root.create_account()
+                    background_color: 0.2, 0.8, 0.4, 1
+
+                HoverButton:
+                    text: 'BACK TO LOGIN'
+                    on_press: root.manager.current = 'login'
+                    background_color: 0.8, 0.2, 0.2, 1
+
+            Label:
+                id: signup_status
+                text: ''
+                color: 1, 0.4, 0.4, 1
+                size_hint_y: None
+                height: 40
+                font_size: '16sp'
+                bold: True

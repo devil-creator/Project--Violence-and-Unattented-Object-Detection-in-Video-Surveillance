@@ -1,0 +1,45 @@
+<LogsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: (6/255, 20/255, 27/255, 1)  # Background color #06141B
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Label:
+            text: "Incident Logs"
+            font_size: 24
+            bold: True
+            color: (204/255, 208/255, 207/255, 1)  # Text color #CCD0CF
+            size_hint_y: None
+            height: 50
+
+        ScrollView:
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
+                padding: 10
+                id: logs_list
+
+        BoxLayout:
+            size_hint_y: None
+            height: 50
+            spacing: 10
+            Button:
+                text: "Back to Home"
+                font_size: 18
+                background_color: (37/255, 55/255, 69/255, 1)
+                color: (155/255, 168/255, 171/255, 1)
+                on_press: app.back_to_home()
+            Button:
+                text: "Clear Logs"
+                font_size: 18
+                background_color: (150/255, 40/255, 40/255, 1)  # Red color
+                color: (1, 1, 1, 1)  # White text
+                on_press: root.clear_logs()
